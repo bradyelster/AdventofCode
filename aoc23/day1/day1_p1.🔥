@@ -1,0 +1,53 @@
+# Brady Elster - Advent of Code 2023
+# This is me attempting to learn Mojo:)
+
+# import packages
+from python import Python
+from python.object import PythonObject, Dictionary
+#from icecream import ic
+
+# read-in the file
+fn read_file(path: String) raises -> String:
+    '''This function takes in a valid path to text file, uses the Mojo built-ins to store all the text in a single string called strlist and returns it.'''
+    with open(path, "r") as f:
+        let strlist: String = (f.read())
+        return strlist
+
+fn is_digit(char: String) raises -> Bool:
+    for i in range(10):
+        if char == atol(i):
+            return True
+    return False
+
+fn find_nums(string: String) raises -> String:
+    '''This function takes in a string (i.e. from read_file), searches for single characters that are capable of being converted to integers, and returns a string containing digits found in order of occurrence.'''
+    var newstr: String = ""
+    for i in range(len(string)):
+        #if ord(string[i]) >= int(49) and ord(string[i]) <= int(57): 
+        if is_digit(string[i]) == True:
+            # can also check ascii values. Nums 1-9 correspond to ASCII vals 49-57
+            newstr.__iadd__(string[i])
+        else:
+            pass
+    return newstr
+
+fn line_num(string: String) raises -> Int:
+    '''This function finds the (first and last) numbers in a string and returns them as a concatenated string. Since all input will be passed through find_nums() first, we know these characters will be valid integers.'''
+    #this is the function that throws errors
+    let first: String = string[0]
+    let last: String = string[-1]
+    let concat: Int = atol(first.__add__(last))
+    return concat
+
+# main file to run the script
+fn main() raises:
+    var summ: Int = 0
+    let lines = (read_file("day1/input1.txt"))
+    for i in range(len(lines)):
+        let line_numstr = find_nums(lines[i])
+        let linenum = line_num(line_numstr[i])
+        #summ += linenum
+        #print('Sum: ', summ)
+    
+
+
