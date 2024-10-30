@@ -1,8 +1,6 @@
 # Brady Elster - Advent of Code 2023
 # Day 1, part 1 (attempt 2, trying new approach)
 
-# from icecream import ic
-
 
 def read_file(path):
     with open(path) as f:
