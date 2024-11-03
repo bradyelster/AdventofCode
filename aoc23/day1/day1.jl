@@ -18,11 +18,23 @@ Sketch:
 6. sum up all calibration values and return result
 =# 
 
-# global path = "day1/test1.txt"
+path = joinpath(@__DIR__, "test1.txt")
 
 try 
-    open("test1.txt", "r") do s
+    open(path, "r") do s
         # perform desired operations if file exists
+        
+        # line_number
+        line = 0  
+    
+        # read till end of file
+        while ! eof(f)  
+    
+        # read a new / next line for every iteration           
+        s = readline(f)          
+        line += 1
+        println("$line, $s")
+        end
     end
 catch
     # either warn or print that the file doesn't exist
