@@ -1,13 +1,6 @@
 # Brady Elster - AOC 2023 attempt in Julia
 # November 2, 2024
 
-
-
-# f = open("absolute path of the file", "r")
-# few file operations 
-# close(f)
-
-
 #=
 Sketch:
 1. read file
@@ -16,45 +9,22 @@ Sketch:
 4. start at either end of the list and go towards the middle
 5. return number for each line which is int("num1"*"num2") - this is the "calibration value"
 6. sum up all calibration values and return result
-=# 
-
-path = joinpath(@__DIR__, "test1.txt")
+=#
 
 try 
-    open(path, "r") do s
+    open("input1.txt", "r") do s
         # perform desired operations if file exists
-        
-        # line_number
-        line = 0  
-    
-        # read till end of file
-        while ! eof(f)  
-    
-        # read a new / next line for every iteration           
-        s = readline(f)          
-        line += 1
-        println("$line, $s")
-        end
+        file_exists::Bool = true
     end
 catch
     # either warn or print that the file doesn't exist
     println("file doesn't exist")
 end
 
-#=
-f = open(path, "r")
- 
-    # line_number
-    line = 0  
- 
-    # read till end of file
-    while ! eof(f)  
- 
-    # read a new / next line for every iteration           
-    s = readline(f)          
-    line += 1
-    println("$line, $s")
+function file_existence(file_exists)
+    if file_exists == true
+        println("file exists 🤩")
+    else 
+        println("file doesn't exist")
     end
-
-close(f)
-=#
+end

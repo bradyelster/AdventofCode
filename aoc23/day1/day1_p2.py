@@ -65,5 +65,5 @@ main('day1/input1.txt')
 #print(blarg('sevenine'))
 #print(blarg('1eightwo7three'))
 
-#then it wil return what i need.
+# then it wil return what i need.
 # sucks that im failing on like only 1 line though!
