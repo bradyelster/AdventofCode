@@ -1,0 +1,1 @@
+FlatMap<Enumerate<std::slice::Iter<'_, &str>>, Map<MatchIndices<'_, &str>, {closure@src/bin/day1.rs:17:63: 17:78}>, {closure@src/bin/day1.rs:17:27: 17:36}>
