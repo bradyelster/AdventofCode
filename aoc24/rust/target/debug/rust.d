@@ -1,0 +1,1 @@
+/home/belster12/AdventofCode/aoc24/rust/target/debug/rust: /home/belster12/AdventofCode/aoc24/rust/src/data.rs /home/belster12/AdventofCode/aoc24/rust/src/main.rs /home/belster12/AdventofCode/aoc24/rust/src/solutions/day01.rs /home/belster12/AdventofCode/aoc24/rust/src/solutions/mod.rs
