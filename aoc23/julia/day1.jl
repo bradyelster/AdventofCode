@@ -11,20 +11,42 @@ Sketch:
 6. sum up all calibration values and return result
 =#
 
-try 
-    open("input1.txt", "r") do s
-        # perform desired operations if file exists
-        file_exists::Bool = true
+function partone(path)
+    total = 0
+    for line in readlines(path)
+        digits = [c for c in line if isdigit(c)]
+        total += parse(Int, string(digits[1], digits[end]))
     end
-catch
-    # either warn or print that the file doesn't exist
-    println("file doesn't exist")
+    return total
 end
 
-function file_existence(file_exists)
-    if file_exists == true
-        println("file exists 🤩")
-    else 
+function parttwo(path)
+    d = Dict("one" => "1", "two" => "2", "three" => "3", "four" => "4", "five" => "5",
+        "six" => "6", "seven" => "7", "eight" => "8", "nine" => "9")
+    pattern = r"(?=(\d|one|two|three|four|five|six|seven|eight|nine))"
+
+    total = 0
+    for line in readlines(path)
+        matches = [get(d, m.captures[1], m.captures[1]) for m in eachmatch(pattern, line)]
+        total += parse(Int, matches[1] * matches[end])
+    end
+    return total
+end
+
+function main()
+    # First check if the file exists for this given input path
+    input_path = "input1.txt"
+
+    return try
+        open(input_path, "r") do s
+            # begin program if file exists
+            println("part one answer: ", partone(input_path))
+            println("part two answer: ", parttwo(input_path))
+        end
+    catch
+        # print that the file doesn't exist
         println("file doesn't exist")
     end
 end
+
+main()
