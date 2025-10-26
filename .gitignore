@@ -1,0 +1,4 @@
+# Ignore all build artifacts from rustc compiler
+# this rids GitHub of "Makefile" language indicator
+/aoc23/rust/target/
+/aoc24/rust/target/
