@@ -2,3 +2,8 @@
 # this rids GitHub of "Makefile" language indicator
 /aoc23/rust/target/
 /aoc24/rust/target/
+
+# hide all input folders
+/aoc23/input1.txt/
+/aoc24/julia/input/
+/aoc25/julia/input/
