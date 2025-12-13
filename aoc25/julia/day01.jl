@@ -82,7 +82,7 @@ end
 
 # Main function
 function main()
-    instructions = parse_instructions("input/day01.txt")
+    instructions = parse_instructions("input/day01_noah.txt")
 
     println("Part 1: ", part_one(instructions))
     println("Part 2: ", part_two(instructions))
